@@ -8,6 +8,8 @@ OpenAI-compatible ASR API using Qwen3-ASR-1.7B with vLLM.
 ./install.sh
 ```
 
+Prerequisite: [`uv`](https://docs.astral.sh/uv/) must be installed on the host.
+
 ## Run
 
 ```bash
@@ -19,6 +21,7 @@ OpenAI-compatible ASR API using Qwen3-ASR-1.7B with vLLM.
 Copy `.env.example` to `.env` and adjust as needed:
 
 - `MODEL` - Model ID (default: Qwen/Qwen3-ASR-1.7B)
+- `SERVED_MODEL_NAME` - API model name exposed by vLLM (default: whisper-1)
 - `HOST` - Server host (default: 0.0.0.0)
 - `PORT` - Server port (default: 8000)
 - `GPU_MEMORY_UTILIZATION` - GPU memory fraction (default: 0.35)

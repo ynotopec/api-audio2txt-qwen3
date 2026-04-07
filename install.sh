@@ -7,6 +7,12 @@ VENV_PATH="$HOME/venv/$PROJECT_NAME"
 
 echo "Setting up $PROJECT_NAME..."
 
+if ! command -v uv >/dev/null 2>&1; then
+    echo "Error: uv is not installed. Install it first: https://docs.astral.sh/uv/"
+    exit 1
+fi
+
+mkdir -p "$HOME/venv"
 uv venv "$VENV_PATH"
 source "$VENV_PATH/bin/activate"
 
