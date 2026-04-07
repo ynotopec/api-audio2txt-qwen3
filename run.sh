@@ -10,6 +10,11 @@ if [ ! -d "$VENV_PATH" ]; then
     return 1 2>/dev/null || exit 1
 fi
 
+if [ ! -x "$VENV_PATH/bin/vllm" ]; then
+    echo "vLLM executable not found at $VENV_PATH/bin/vllm. Re-run install.sh."
+    return 1 2>/dev/null || exit 1
+fi
+
 # Load .env if exists
 if [ -f "$SCRIPT_DIR/.env" ]; then
     set -a
